@@ -2186,10 +2186,10 @@
   dependencies:
     "@lukeed/csprng" "^1.1.0"
 
-"@medusajs/admin-ui@^2.1.16":
-  version "2.1.16"
-  resolved "https://registry.yarnpkg.com/@medusajs/admin-ui/-/admin-ui-2.1.16.tgz#8cc67cc57f57a8b708369e9a1bd8f16193e18133"
-  integrity sha512-suhH6Q5Ndyw6dpIlxgqLgzeuho6Ie3IKRHltdbub0DzJzv1VfQEJ2CJjReWJ2/GBuiSYnwt7cpOdxfkS1JYcdQ==
+"@medusajs/admin-ui@^2.1.18":
+  version "2.1.18"
+  resolved "https://registry.yarnpkg.com/@medusajs/admin-ui/-/admin-ui-2.1.18.tgz#c1a7a8c82dbea2204953cdceba83aa16e6e02d53"
+  integrity sha512-bUME5vZz455gqkAHErisyP0CsCThIzW3H4pi3z0KyYd6QiOy7Vesm4zBKonR8ddtu897l94QvBJPXqSDCxJE1w==
   dependencies:
     "@babel/parser" "7.22.5"
     "@babel/traverse" "7.22.5"
@@ -2276,11 +2276,11 @@
     zod "^3.22.2"
 
 "@medusajs/admin@^7.1.16":
-  version "7.1.16"
-  resolved "https://registry.yarnpkg.com/@medusajs/admin/-/admin-7.1.16.tgz#0c042d455d057ea65af234186fa50d6f38c51932"
-  integrity sha512-1BKOL2P4jCzjRNvplnXN4qAPL25SenTc3UhZkp1CSSaXR4uKxowDRpCSQ5g/DTGPIITulKqzdMSzqlQi4eyZdA==
+  version "7.1.17"
+  resolved "https://registry.yarnpkg.com/@medusajs/admin/-/admin-7.1.17.tgz#5521751f6bb35b70f879204c78321a0ca5c743ed"
+  integrity sha512-B6WKx79tz3WWqZGOpaYQtoj0a/QkHWWxH6FYOqP/Ocbq5KLOR95BvjpPnEyVhZ6rnnt4aK+ZDqdvQ2eZ52m1iQ==
   dependencies:
-    "@medusajs/admin-ui" "^2.1.16"
+    "@medusajs/admin-ui" "^2.1.18"
     "@rollup/plugin-alias" "5.0.0"
     "@rollup/plugin-commonjs" "24.1.0"
     "@rollup/plugin-json" "6.0.0"
@@ -2414,16 +2414,16 @@
     uuid "^9.0.0"
 
 "@medusajs/medusa@^1.20.9":
-  version "1.20.9"
-  resolved "https://registry.yarnpkg.com/@medusajs/medusa/-/medusa-1.20.9.tgz#be34928fcff08823d0051497844e628fcec69f94"
-  integrity sha512-2rE66QhuWsWIp+NAOFUmeiRoP5smG8a+FV29piDz3FYQ5Gvy56d0RaZY/UdvK/oAU4/EQO4P2E7vvYcjQajYBA==
+  version "1.20.10"
+  resolved "https://registry.yarnpkg.com/@medusajs/medusa/-/medusa-1.20.10.tgz#2d8e7c2932b6381feccc1e6813247d428e58306b"
+  integrity sha512-dVCFhWFQ2j6PttMepJuZNHwchv1TU44MagmUpA4hcxWum6j8ZXuXM3bDM45+oXTB0htX1lBdV9zHgnIxWVvJTw==
   dependencies:
     "@medusajs/core-flows" "^0.0.10"
     "@medusajs/link-modules" "^0.2.12"
     "@medusajs/medusa-cli" "^1.3.23"
     "@medusajs/modules-sdk" "^1.12.12"
     "@medusajs/orchestration" "^0.5.8"
-    "@medusajs/utils" "^1.11.10"
+    "@medusajs/utils" "^1.11.11"
     "@medusajs/workflows-sdk" "^0.1.8"
     awilix "^8.0.0"
     body-parser "^1.19.0"
@@ -2544,10 +2544,10 @@
     sonner "^1.4.41"
     tailwind-merge "^2.2.1"
 
-"@medusajs/utils@^1.11.10":
-  version "1.11.10"
-  resolved "https://registry.yarnpkg.com/@medusajs/utils/-/utils-1.11.10.tgz#1f3aefe767b4ea24d9b5a842e71e29e6b324d347"
-  integrity sha512-L0REq+CEArgr1b7P4lddSKHQGrx0IA7exTrHkEGT6b6h2GXT8MRXO4YfFi8PRBZkMu36zDSnfPBIGbjvnpGYsg==
+"@medusajs/utils@^1.11.10", "@medusajs/utils@^1.11.11":
+  version "1.11.11"
+  resolved "https://registry.yarnpkg.com/@medusajs/utils/-/utils-1.11.11.tgz#1a9e6417f6dbeb04532e5f8d5dfb0ca24489a2ce"
+  integrity sha512-r4u1Ctgwt0LftnAHggTfU7RgNppdwY6DfQaefxSrPRSCBMniU6p7j9Lv1G7DkTXZd79V9UNJuixqtlFezGC1tA==
   dependencies:
     "@medusajs/types" "^1.11.17"
     "@mikro-orm/core" "5.9.7"
@@ -6408,15 +6408,10 @@ core-js@^1.0.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
   integrity sha512-ZiPp9pZlgxpWRu0M+YWbm6+aQ84XEfH1JRXvfOc/fILWI0VKhLC2LX13X1NYq4fULzLMq7Hfh43CSo2/aIaUPA==
 
-core-js@^3.6.5:
+core-js@^3.6.5, core-js@^3.7.0:
   version "3.37.0"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.37.0.tgz#d8dde58e91d156b2547c19d8a4efd5c7f6c426bb"
   integrity sha512-fu5vHevQ8ZG4og+LXug8ulUtVxjOcEYvifJr7L5Bfq9GOztVqsKd9/59hUk2ZSbCrS3BqUr3EpaYGIYzq7g3Ug==
-
-core-js@^3.7.0:
-  version "3.36.1"
-  resolved "https://registry.npmjs.org/core-js/-/core-js-3.36.1.tgz"
-  integrity sha512-BTvUrwxVBezj5SZ3f10ImnX2oRByMxql3EimVqMysepbC9EeMUOpLwdy6Eoili2x6E4kf+ZUB5k/+Jv55alPfA==
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -6938,12 +6933,12 @@ dot-prop@^5.2.0:
   dependencies:
     is-obj "^2.0.0"
 
-dotenv@16.3.1, dotenv@^16.0.3:
+dotenv@16.3.1:
   version "16.3.1"
   resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.3.1.tgz"
   integrity sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==
 
-dotenv@^16.4.5:
+dotenv@^16.0.3, dotenv@^16.4.5:
   version "16.4.5"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.4.5.tgz#cdd3b3b604cb327e286b4762e13502f717cb099f"
   integrity sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==
@@ -10780,17 +10775,10 @@ qs@6.11.0:
   dependencies:
     side-channel "^1.0.4"
 
-qs@^6.10.3, qs@^6.11.2:
+qs@^6.10.3, qs@^6.11.0, qs@^6.11.2:
   version "6.12.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.12.1.tgz#39422111ca7cbdb70425541cba20c7d7b216599a"
   integrity sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==
-  dependencies:
-    side-channel "^1.0.6"
-
-qs@^6.11.0:
-  version "6.12.0"
-  resolved "https://registry.npmjs.org/qs/-/qs-6.12.0.tgz"
-  integrity sha512-trVZiI6RMOkO476zLGaBIzszOdFPnCCXHPG9kn0yuS1uz6xdVxPfZdB3vUig9pxPFDM9BRAgz/YUIVQ1/vuiUg==
   dependencies:
     side-channel "^1.0.6"
 
