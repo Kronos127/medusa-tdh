@@ -22,10 +22,14 @@
     "seed": "cross-env medusa seed -f ./data/seed.json",
     "start": "medusa migrations run && medusa start",
     "start:custom": "cross-env npm run build && node --preserve-symlinks --trace-warnings index.js",
-    "dev": "cross-env npm run build:server && medusa develop"
+    "dev": "cross-env npm run build:server && yarn start-meli || medusa develop",
+    "start-meli": "docker run -d -it --rm -p 7700:7700 -v $(pwd)/data.ms:/data.ms getmeili/meilisearch",
+    "sync-meli": "node src/utils/scripts/sync_melisearch.js"
   },
   "dependencies": {
     "@medusajs/admin": "^7.1.16",
+    "@medusajs/admin-sdk": "^0.0.1",
+    "@medusajs/admin-ui": "^2.1.18",
     "@medusajs/cache-inmemory": "1.8.11",
     "@medusajs/cache-redis": "^1.9.2",
     "@medusajs/event-bus-local": "1.9.9",
@@ -41,12 +45,18 @@
     "medusa-interfaces": "1.3.10",
     "medusa-payment-manual": "1.0.25",
     "medusa-payment-stripe": "6.0.11",
+    "medusa-plugin-categories": "^1.0.6",
+    "medusa-plugin-meilisearch": "^2.0.11",
+    "meilisearch": "^0.44.1",
     "prism-react-renderer": "^2.0.4",
+    "swr": "^2.2.5",
     "typeorm": "0.3.16"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-class-properties": "^7.25.7",
     "@babel/preset-typescript": "^7.21.4",
     "@medusajs/medusa-cli": "1.3.23",
     "@stdlib/number-float64-base-normalize": "0.0.8",

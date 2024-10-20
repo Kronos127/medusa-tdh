@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== `test`) {
 }
 
 module.exports = {
-  presets: [["babel-preset-medusa-package"], ["@babel/preset-typescript"]],
+  presets: ["babel-preset-medusa-package", "@babel/preset-typescript"],
+  plugins: ["@babel/plugin-transform-class-properties"],
   ignore,
 }

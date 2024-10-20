@@ -35,7 +35,7 @@ const DB_PORT = process.env.DB_PORT
 const DB_DATABASE = process.env.DB_DATABASE
 
 const DATABASE_URL = 
-  `postgres://${DB_USERNAME}:${DB_PASSWORD}` + 
+  `postgres://${DB_USERNAME}` + 
   `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`
 
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
@@ -56,6 +56,67 @@ const plugins = [
       autoRebuild: true,
       develop: {
         open: process.env.OPEN_BROWSER !== "false",
+      },
+    },
+  },
+  {
+    resolve: `medusa-payment-stripe`,
+    options: {
+      api_key: process.env.STRIPE_API_KEY,
+      webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
+    },
+  },
+  {
+    resolve: `medusa-plugin-categories`,
+    options: {
+      enableUI: true,
+    },
+  },
+  {
+    resolve: `medusa-plugin-meilisearch`,
+    options: {
+      config: {
+        host: process.env.MEILISEARCH_HOST,
+        apiKey: process.env.MEILISEARCH_API_KEY,
+      },
+      settings: {
+        products: {
+          indexSettings: {
+            searchableAttributes: [
+              "title", 
+              "description", 
+              "variant_sku"
+            ],
+            displayedAttributes: [
+              "title",
+              "description",
+              "variant_sku",
+              "thumbnail",
+              "handle",
+            ],
+            filterableAttributes: [
+              "categories.handle",
+              "variants.prices.amount",
+              "variants.prices.currency_code"
+            ],
+          },
+          primaryKey: "id",
+          transformer: (product) => ({
+            id: product.id,
+            title: product.title,
+            description: product.description,
+            variant_sku: product.variant_sku,
+            thumbnail: product.thumbnail,
+            handle: product.handle,
+            // include other attributes as needed
+          }),
+        },
+        collections: {
+          searchableAttributes: ["title"],
+        },
+        categories: {
+          searchableAttributes: ["name"],
+        },
       },
     },
   },
@@ -83,7 +144,7 @@ const projectConfig = {
   store_cors: STORE_CORS,
   database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
-  database_extra: { ssl: { rejectUnauthorized: false } },
+  // database_extra: { ssl: { rejectUnauthorized: false } },
   
   // Uncomment the following lines to enable REDIS
   redis_url: REDIS_URL,
@@ -95,23 +156,3 @@ module.exports = {
   plugins,
   modules,
 };
-
-const plugins = [
-  // ...
-  {
-    resolve: `medusa-payment-stripe`,
-    options: {
-      api_key: process.env.STRIPE_API_KEY,
-      webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
-    },
-  },
-]
-const plugins = [
-  // ...
-  {
-    resolve: `medusa-plugin-categories`,
-    options: {
-      enableUI: true,
-    },
-  },
-];
